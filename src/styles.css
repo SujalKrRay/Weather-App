@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+   --blue:#b16ed3;
+}
+*{
+   margin: 0px;
+   padding: 0px;
+}
+body{
+   width: 99%;
+   height: 100%;
+   background-color: slateblue;
+   /* font-family: cursive; */
+}

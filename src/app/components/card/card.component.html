@@ -1,0 +1,58 @@
+<div class="main">
+   <div class="main-left">
+      <div class="upper">
+         <div class="loc">{{ TodayDate | date: "longDate" }} | {{ cityName | titlecase }} </div>
+         <div class="temp">{{ weatherData.main.temp | number: '1.0-0'}}°C</div>
+         <img src="{{ iconURL }}" alt="weather icon">
+      </div>
+      <div class="lower">
+         <div class="lower-data">
+            <div class="block">
+               <div class="label">
+                  <span>Weather Condition :&nbsp;</span>
+               </div>
+               <div class="value">
+                  {{ weatherData.weather[0].description | titlecase }}
+               </div>
+            </div>
+            <div class="block">
+               <div class="label">
+                  <span>Maximum Temperature :&nbsp;</span>
+               </div>
+               <div class="value">
+                  {{ weatherData.main.temp_max | number: '1.0-0' }}°C
+               </div>
+            </div>
+            <div class="block">
+               <div class="label">
+                  <span>Minimum Temperature :&nbsp;</span>
+               </div>
+               <div class="value">
+                  {{ weatherData.main.temp_min | number: '1.0-0' }}°C
+               </div>
+            </div>
+            <div class="block">
+               <div class="label">
+                  <span>Humidity :&nbsp;</span>
+               </div>
+               <div class="value">
+                  {{ weatherData.main.humidity }}%
+               </div>
+            </div>
+            <div class="block">
+               <div class="label">
+                  <span>Wind Speed :&nbsp;</span>
+               </div>
+               <div class="value">
+                  {{ weatherData.wind.speed*3.6 | number: '1.0-2'  }} km/hr
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="main-right">
+      <form #form="ngForm" (submit)="onSubmit()">
+         <input type="text" placeholder="Enter City Name" name="City" [(ngModel)]="cityName">
+      </form>
+   </div>
+</div>
