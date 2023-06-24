@@ -1,14 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-:root{
-   --blue:#b16ed3;
-}
-*{
-   margin: 0px;
-   padding: 0px;
-}
-body{
-   width: 99%;
-   height: 100%;
+html{
    background-color: slateblue;
-   /* font-family: cursive; */
+   font-size: 10px; /*or font-size: 62.5%; are equal to 10px=1rem */
+}
+
+@media screen and (max-width: 600px){
+   html{
+      font-size: 8px;
+   }
 }
